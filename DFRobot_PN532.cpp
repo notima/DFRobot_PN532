@@ -365,6 +365,16 @@ bool DFRobot_PN532::writeData(int block, uint8_t data[])
     return true;
 }
 
+const int min(const uint8_t a, const int b)
+{
+    return (b < a) ? b : a;
+}
+
+const int max(const int a, const int b)
+{
+    return (b > a) ? b : a;
+}
+
 /*!
    It takes three steps to write a piece of data to a card
    1.Read out all the data for one block(every block have 16 data.).
